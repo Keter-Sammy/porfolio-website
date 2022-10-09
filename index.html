@@ -39,10 +39,66 @@
                     <img src="images/sam.png">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perspiciatis repellat autem maxime explicabo dolorem ex rerum 
+                        doloribus voluptate enim odio. Lorem ipsum dolor sit, 
+                        amet consectetur adipisicing elit. Vitae quis nulla voluptatum accusantium hic, 
+                        voluptas, accusamus quod provident itaque dolorum consequatur voluptates? 
+                        Maxime odit totam dicta ab distinctio, vitae placeat!
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills:</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience:</p>
+                        <p class="tab-links" onclick="opentab('education')">Education:</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                            <li><span>Web Developer</span><br>Web App Development</li>
+                            <li><span>Mobile App Development</span><br>Android/iOS apps</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Manager</span><br>Leading After-Sales Teams in Africa</li>
+                            <li><span>IT Support</span><br>Offering IT Support for Telecomms</li>
+                            <li><span>Quality Assurance</span><br>Providing Network QA, Monitoring and Benchmarking</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>January 2022 - Date</span><br>Python Development - Intermediate</li>
+                            <li><span>Jan 2022 - Sept 2022</span><br>Professional Certifications (Google)</li>
+                            <li><span>2013 - 2017</span><br>Bsc. Mathematics and Computer Science - MMU</li>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    let tabLinks = document.getElementsByClassName("tab-links");
+    let tabContents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tabLink of tabLinks){
+            tabLink.classList.remove("active-link");
+        }
+
+        for (tabContent of tabContents){
+            tabContent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+
+    }
+</script>
 </html>
